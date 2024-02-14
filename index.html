@@ -13,12 +13,12 @@
 </head>
 
 <body class="font-poppins">
-    <main class="px-5 md:px-10 lg:px-32 min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
+    <main style="background-size: contain;" class="px-5 md:px-10 lg:px-40 min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
         <!-- home screen -->
         <section id="home-screen" class="min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col items-center gap-10">
-                <h1 class="text-5xl md:text-7xl lg:text-9xl font-anton text-center uppercase">Alpha Clash Pro</h1>
-                <p class="text-lg md:text-xl text-center">Unleash Your Keyboard Kun g Fu : Press “Enter” to Play</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-anton text-center uppercase">Alpha Clash Pro</h1>
+                <p class="text-center">Unleash Your Keyboard Kun g Fu : Press “Enter” to Play</p>
                 <button onclick="play()" class="btn bg-white text-black">Play Now</button>
             </div>
         </section>
@@ -27,18 +27,18 @@
             <div class="flex flex-col items-center gap-20">
                 <!-- screen -->
                 <div
-                    class="artboard artboard-horizontal sm:phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
+                    class="artboard artboard-horizontal sm:phone-5 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
                     <div class="flex justify-center">
                         <p class="bg-[#2F2941] px-3 pb-3 md:px-6 md:pb-4 rounded-b-xl text-white text-sm md:text-lg">Don't watch keyboard while playing...
                         </p>
                     </div>
                     <div class="flex justify-center items-center h-full">
-                        <p id="current-alphabet" class="text-black text-9xl font-bold uppercase py-0 lg:py-16">Y</p>
+                        <p id="current-alphabet" class="text-black text-9xl font-bold uppercase py-0 md:py-10">Y</p>
                     </div>
                 </div>
                 <!-- keyboard start-->
                 <div class="w-full">
-                    <div class="flex text-sm md:*:text-3xl justify-center gap-1 my-1 w-full">
+                    <div class="flex text-sm md:*:text-xl justify-center gap-1 my-1 w-full">
                         <kbd id="q" class="kbd">q</kbd>
                         <kbd id="w" class="kbd">w</kbd>
                         <kbd id="e" class="kbd">e</kbd>
@@ -50,7 +50,7 @@
                         <kbd id="o" class="kbd">o</kbd>
                         <kbd id="p" class="kbd">p</kbd>
                     </div>
-                    <div class="flex text-sm md:*:text-3xl justify-center gap-1 my-1 w-full">
+                    <div class="flex text-sm md:*:text-xl justify-center gap-1 my-1 w-full">
                         <kbd id="a" class="kbd">a</kbd>
                         <kbd id="s" class="kbd">s</kbd>
                         <kbd id="d" class="kbd">d</kbd>
@@ -61,7 +61,7 @@
                         <kbd id="k" class="kbd">k</kbd>
                         <kbd id="l" class="kbd">l</kbd>
                     </div>
-                    <div class="flex text-sm md:*:text-3xl justify-center gap-1 my-1 w-full">
+                    <div class="flex text-sm md:*:text-xl justify-center gap-1 my-1 w-full">
                         <kbd id="z" class="kbd">z</kbd>
                         <kbd id="x" class="kbd">x</kbd>
                         <kbd id="c" class="kbd">c</kbd>
