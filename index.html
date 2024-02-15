@@ -17,8 +17,8 @@
         <!-- home screen -->
         <section id="home-screen" class="min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col items-center gap-10">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-anton text-center uppercase">Alpha Clash Pro</h1>
-                <p class="text-center">Unleash Your Keyboard Kun g Fu : Press “Enter” to Play</p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-anton text-center uppercase">Alpha Clash Pro</h1>
+                <p class="text-center text-sm lg:text-lg">Unleash Your Keyboard Kun g Fu : Press “Enter” to Play</p>
                 <button onclick="play()" class="btn bg-white text-black">Play Now</button>
             </div>
         </section>
@@ -75,15 +75,17 @@
                 <!-- keyboard end -->
                 <!-- life score -->
                 <div class="flex justify-between w-full">
+                    <!-- display life  -->
                     <button class="btn rounded-full bg-purple-700  text-white px-4 border-0">
                         Life
                         <img src="images/heart.svg" alt="">
-                        <span>1</span>
+                        <span id="current-life">5</span>
                     </button>
+                    <!-- display score  -->
                     <button class="btn rounded-full bg-blue-900 text-white px-4 border-0">
                         Score
                         <img src="images/dollar.svg" alt="">
-                        <span>1</span>
+                        <span id="current-score">0</span>
                     </button>
 
                 </div>
@@ -91,14 +93,17 @@
         </section>
         <!-- playground end -->
         <!-- final Score start -->
-        <section class="score flex justify-center items-center min-h-screen hidden">
-            <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
-                <h1 class="text-8xl">
-                    <span class="font-extrabold">Score:</span>
-                    <span>14</span>
-                </h1>
-                <button class="btn">Play Again</button>
-                <p>Practice will make you a Pro</p>
+        <section id="score" class="hidden">
+            <div class="flex justify-center items-center min-h-screen">
+                <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-8 rounded-lg">
+                    <span class="text-2xl md:text-3xl text-red-600 font-semibold">Game Over !</span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl">
+                        <span class="font-extrabold">Score:</span>
+                        <span id="final-score">14</span>
+                    </h1>
+                    <button onclick="play()" class="btn">Play Again</button>
+                    <p>Practice will make you a Pro</p>
+                </div>
             </div>
         </section>
     </main>
