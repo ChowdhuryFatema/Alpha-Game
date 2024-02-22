@@ -1,5 +1,12 @@
 
+const  audio = new Audio()
+let isGamePlayOn = false;
+const artBoard = document.getElementById('art-board');
+const modalBox = document.getElementById('modal-box');
+
 function handleKeyboardButtonPress(event) {
+
+    if( isGamePlayOn == false ) return;
     const pressedKey = event.key;
 
     // stop the game if pressed 'Esc'
@@ -11,6 +18,10 @@ function handleKeyboardButtonPress(event) {
 
     // check right or wrong key pressed 
     if (pressedKey === currentAlphabet) {
+
+        audio.src = '../audio-clip/success.mp3';
+        audio.play();
+
         // update score 
         const currentScore = getTextElementValueById('current-score');
         const updatedScore = currentScore + 1;
@@ -20,8 +31,17 @@ function handleKeyboardButtonPress(event) {
         removeClassNameById(currentAlphabet, 'bg-orange-400')
         continueGame()
     } else {
+
+        audio.src = '../audio-clip/wrong.mp3';
+        audio.play();
+
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
+
+        const updatedLifePercentage = (updatedLife / 5) * 100;
+
+        artBoard.style.background = `linear-gradient(#FFFFFFB3 ${updatedLifePercentage}%, red)`;
+
         setTextElementValueById('current-life', updatedLife)
         if (updatedLife === 0) {
             gameOver();
@@ -30,6 +50,7 @@ function handleKeyboardButtonPress(event) {
 
 
 }
+
 document.addEventListener('keyup', handleKeyboardButtonPress)
 
 function continueGame() {
@@ -55,6 +76,7 @@ function play() {
     setTextElementValueById('current-life', 5);
     setTextElementValueById('current-score', 0);
 
+    isGamePlayOn = true;
     continueGame()
 }
 
@@ -70,4 +92,20 @@ function gameOver() {
 
     const currentAlphabet = getElementTextById('current-alphabet');
     removeClassNameById(currentAlphabet, 'bg-orange-400')
+    isGamePlayOn = false;
+
+    artBoard.style.background = 'linear-gradient(#FFFFFFB3 100%, red)';
 }
+
+function modalOpen(event){
+    if(event.clientY < 20){
+        modalBox.style.display = 'flex';
+    }
+}
+
+document.body.onmousemove = modalOpen;
+
+function modalClose(){
+    modalBox.style.display = 'none';
+}
+
